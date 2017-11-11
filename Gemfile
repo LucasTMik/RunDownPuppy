@@ -32,6 +32,8 @@ gem 'devise'
 gem 'bootstrap', '~> 4.0.0.beta2.1'
 gem 'jquery-rails'
 
+gem "rails-erd"
+
 
 
 group :development, :test do
