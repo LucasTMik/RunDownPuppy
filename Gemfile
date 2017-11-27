@@ -8,7 +8,7 @@ end
 
 gem 'rails', '~> 5.1.4'
 
-gem 'sqlite3'
+gem 'pg'
 
 gem 'puma', '~> 3.7'
 
@@ -42,7 +42,10 @@ group :development, :test do
 
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+  
 end
+
+
 
 group :development do
 
