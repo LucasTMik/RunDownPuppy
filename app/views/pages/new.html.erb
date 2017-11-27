@@ -1,0 +1,14 @@
+
+<div class="w3-hide-small w3-hide-medium w3-padding-24"></div>
+<div class="w3-hide-large w3-padding-24"></div>
+<div class="w3-hide-large w3-padding-16"></div>
+
+<%= simple_form_for @animal, {:url => pages_new_path, :method => :post} do |form| %>
+  <%= form.input :nick, label: 'Apelido' %>
+  <%= form.input :kind, label: 'Tipo do bixo' %>
+  <%= form.input :color, label: 'Cor' %>
+  <%= form.input :weight, label: 'Peso' %>
+  <%= form.input :description, label: 'Descrição' %>
+
+  <%= form.submit %>
+<% end %>
