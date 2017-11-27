@@ -1,0 +1,68 @@
+  <sidebar class="w3-sidebar w3-bar-block w3-hide-large w3-card w3-animate-right w3-display-right my-sidebar" onload="w3_start" id="mySidebar">
+    <div class=" w3-bar-item" style="margin-top:50px;"></div>
+
+    <button class="w3-bar-item w3-button w3-large w3-border-bottom w3-border-black" onclick="w3_close()">Fechar &times;</button>
+
+    <%= link_to "Histórico", root_path, class:'w3-bar-item w3-button w3-small w3-mobile' %>
+    <%= link_to "Cadastrar", root_path, class:' w3-bar-item w3-button w3-mobile w3-purple w3-small' %>
+
+    <% if user_signed_in? %>
+    <button class="w3-bar-item w3-button w3-xlarge my-black"><%= link_to'Logado', root_path, class:'my-black' %> <spam class="w3-badge w3-white">O</spam></button>
+    <% else %>
+      <%= link_to "Login", new_user_session_path, class:'w3-bar-item w3-button w3-green w3-xlarge w3-mobile ' %>
+    <%end%>
+
+
+  </sidebar>
+
+  <div class="w3-main">
+    <div class="w3-top">
+      <div class="w3-bar w3-animate-top my-bar" >
+
+          <%= link_to root_path, class:'w3-bar-item w3-btn ' do %>
+            <h1 class="w3-wide w3-large">RunDownPuppy</h1>
+          <% end %>
+
+          <div class="w3-display-middle">
+            <form method="POST" action="#">
+            <input id="mySearch" type="search" class="w3-bar-item  w3-input w3-white w3-hide-medium w3-hide-small" placeholder="Buscar.."/>
+            <input type="submit" class="w3-bar-item w3-button w3-green w3-mobile w3-hide-medium w3-hide-small" value="Go"/>
+           </form>
+          </div>
+
+          <div  id="myMenu" class="w3-hide-small w3-hide-medium w3-display-right w3-bar-item my-letter">
+            <%= link_to 'Histórico', root_path , class:'w3-bar-item w3-button w3-xlarge my-letter' %>
+            <% if user_signed_in? %>
+              <button class="w3-bar-item w3-button w3-xlarge my-letter"><%= link_to'Logado', root_path, class:'my-letter' %> <spam class="w3-badge w3-white">O</spam></button>
+            <% else %>
+              <%= link_to 'Login', new_user_session_path , class:'w3-button w3-green w3-xlarge' %>
+            <% end %>
+          </div>
+
+          <button class="w3-button w3-xxlarge w3-hide-large w3-bar-item w3-right"  id="myButton" onclick="w3_open()">&#9776;</button>
+          <button onclick="w3_search()" class="w3-padding w3-right w3-xxlarge w3-bar-item w3-hide-large w3-button"><i class="fa fa-search"></i></button>
+      </div>
+    </div>
+
+    <div class="w3-container w3-padding-32 w3-display-center my-back">
+      <div class=" w3-center" >
+
+        <% @animals.each do |a| %>
+          <div class=" w3-mobile w3-btn w3-round w3-animate-opacity my-item">
+            <img  src="http://www.ferramentasblog.com/wordpress/wp-content/uploads/2011/01/gato.jpg" style="max-width:250px;max-height:200px;"></img>
+            <div class="w3-container  w3-padding my-nick"><%= a.nick %></div>
+          </div>
+        <% end %>
+
+
+      </div>
+
+        <div style="margin-top:10px;">
+          <% if user_signed_in? %>
+            <%= link_to 'CADASTRAR', root_path , class:'w3-button w3-mobile w3-green  w3-block' %>
+          <% else %>
+            <%= link_to 'ENTRE PARA CADASTRAR', new_user_session_path , class:'w3-button w3-mobile w3-green  w3-block' %>
+          <% end %>
+        </div>
+    </div>
+  </div>

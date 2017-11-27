@@ -13,3 +13,20 @@
 //= require rails-ujs
 //= require turbolinks
 //= require_tree .
+function w3_search(){
+
+
+}
+
+
+function w3_open(){
+  document.getElementById("mySidebar").style.display= "block";
+  document.getElementById("myButton").style.display= "none";
+
+
+}
+function w3_close(){
+  document.getElementById("mySidebar").style.display= "none";
+  document.getElementById("myButton").style.display= "block";
+
+}

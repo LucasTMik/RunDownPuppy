@@ -1,4 +1,4 @@
 class Animal < ApplicationRecord
-  belongs_to :adoption
+  has_one :adoption
   has_many :comments
 end
