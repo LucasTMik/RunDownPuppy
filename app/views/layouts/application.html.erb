@@ -17,7 +17,7 @@
       <button class="w3-bar-item w3-button w3-large w3-border-bottom w3-border-black" onclick="w3_close()">Fechar &times;</button>
 
       <%= link_to "Histórico", root_path, class:'w3-bar-item w3-button w3-small w3-mobile' %>
-      <%= link_to "Cadastrar", pages_new_path, class:' w3-bar-item w3-button w3-mobile w3-purple w3-small' %>
+      <%= link_to "Cadastrar", animals_new_path, class:' w3-bar-item w3-button w3-mobile w3-purple w3-small' %>
 
       <% if user_signed_in? %>
       <button class="w3-bar-item w3-button w3-xlarge my-black"><%= link_to'Logado', root_path, class:'my-black' %> <spam class="w3-badge w3-white">O</spam></button>
@@ -28,11 +28,11 @@
 
     </sidebar>
 
-    <div class="w3-main">
+    <div class="w3-main my-back-color">
       <div class="w3-top">
-        <div class="w3-bar w3-animate-top my-bar" >
+        <div class="w3-bar w3-animate-top my-bar " >
 
-            <%= link_to root_path, class:'w3-bar-item w3-btn ' do %>
+            <%= link_to root_path, class:'w3-bar-item ' do %>
               <h1 class="w3-wide w3-large">RunDownPuppy</h1>
             <% end %>
 
@@ -52,17 +52,12 @@
               <% end %>
             </div>
 
-            <button class="w3-button w3-xxlarge w3-hide-large w3-bar-item w3-right"  id="myButton" onclick="w3_open()">&#9776;</button>
+            <button class="w3-button w3-xlarge w3-hide-large w3-bar-item w3-right"  id="myButton" onclick="w3_open()">&#9776;</button>
             <button onclick="w3_search()" class="w3-padding w3-right w3-xxlarge w3-bar-item w3-hide-large w3-button"><i class="fa fa-search"></i></button>
         </div>
       </div>
       <%= yield %>
     </div>
-
-
-
-
-
 
   </body>
 </html>

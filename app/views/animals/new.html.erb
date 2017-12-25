@@ -1,0 +1,24 @@
+
+<div class="my-wrap-large w3-white w3-round-xlarge w3-hide-small">
+  <%= simple_form_for @animal do |form| %>
+    <%= form.input :nick, label: 'Apelido' %>
+    <%= form.input :kind, label: 'Tipo do bixo' %>
+    <%= form.input :color, label: 'Cor' %>
+    <%= form.input :weight, label: 'Peso' %>
+    <%= form.input :description, label: 'Descrição' %>
+
+    <%= form.submit 'Cadastrar', class:'w3-button w3-green w3-round-large' %>
+  <% end %>
+</div>
+
+<div class="my-wrap-small w3-white w3-round-xlarge w3-hide-large w3-hide-medium">
+  <%= simple_form_for @animal do |form| %>
+    <%= form.input :nick, label: 'Apelido' %>
+    <%= form.input :kind, label: 'Tipo do bixo' %>
+    <%= form.input :color, label: 'Cor' %>
+    <%= form.input :weight, label: 'Peso' %>
+    <%= form.input :description, label: 'Descrição' %>
+
+    <%= form.submit 'Cadastrar', class:'w3-button w3-green w3-round-large' %>
+  <% end %>
+</div>

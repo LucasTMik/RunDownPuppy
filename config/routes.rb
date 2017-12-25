@@ -2,10 +2,11 @@ Rails.application.routes.draw do
   get 'pages/home'
 
   devise_for :users
-  get 'pages/new'
+  get 'animals/new'
   get 'pages/home'
+  get 'animals/details'
 
-  post 'pages/new' => 'pages#create'
+  post 'animals' => 'animals#create'
 
   root 'pages#home'
 

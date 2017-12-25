@@ -1,11 +1,14 @@
 <div class="w3-container w3-padding-32 w3-display-center my-back">
-  <div class=" w3-center" >
+  <div class="w3-col l11 w3-center" >
 
     <% @animals.each do |a| %>
-      <div class=" w3-mobile w3-btn w3-round w3-animate-opacity my-item">
-        <img  src="http://www.ferramentasblog.com/wordpress/wp-content/uploads/2011/01/gato.jpg" style="max-width:250px;max-height:200px;"></img>
-        <div class="w3-container  w3-padding my-nick"><%= a.nick %></div>
+      <div class="w3-btn my-item">
+        <%= link_to(animals_details_path id: a.id)  do %>
+            <img class="animal-thumb" src="/dog.jpg"></img>
+            <div class="w3-container w3-padding my-nick"><%= a.nick %></div>
+        <% end %>
       </div>
+
     <% end %>
 
 
@@ -13,7 +16,7 @@
 
     <div style="margin-top:10px;">
 
-        <%= link_to 'CADASTRAR', pages_new_path , class:'w3-button w3-mobile w3-green  w3-block' %>
-      
+        <%= link_to 'CADASTRAR', animals_new_path , class:'w3-button w3-mobile w3-green  w3-block' %>
+
     </div>
 </div>

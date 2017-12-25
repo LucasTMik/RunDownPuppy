@@ -235,12 +235,29 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 
 /*MINHAS CLASSES*/
 
+.my-wrap-large{
+  margin-top: 90px;
+  width: 60%;
+  margin-left: 20%;
+  margin-left: 20%;
+  padding: 20px;
+}
+.my-wrap-small{
+  margin-top:90px;
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+  padding: 10px;
+}
 .my-sidebar{
   width:200px;
   background-color:#ffe9c0;
 }
 .my-bar{
   background-color:#40415e;
+  a:hover{
+    text-decoration: none;
+  }
   h1{
     color:white;
   }
@@ -259,17 +276,34 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
     text-decoration:none;
   }
 }
-
+.my-back-color{
+    background-color:#c5ddff
+}
 .my-back{
   margin-top:45px;
   background-color:#c5ddff
 }
 .my-item{
-  min-width:250px;
+  min-width:250px ;
   height:200px;
   margin:6px;
+  padding:0px;
   background-color:#ffd39d;
   .my-nick{
-    color:white;background-color:#40415e;
+    color:white;
+    background-color:#40415e;
   }
+}
+.my-purple{
+  background-color:#40415e;
+}
+.my-beje{
+  background-color:#ffd39d;
+}
+
+.animal-thumb{
+  display: inline-block;
+height: 80%;
+margin-bottom: 2%;
+
 }
