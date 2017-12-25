@@ -13,7 +13,7 @@
 ActiveRecord::Schema.define(version: 20171111110331) do
 
   create_table "achievements", force: :cascade do |t|
-    t.string "kind"
+    t.string "title"
     t.text "description"
     t.integer "user_id"
     t.datetime "created_at", null: false
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20171111110331) do
   create_table "adoptions", force: :cascade do |t|
     t.integer "user_id"
     t.integer "animal_id"
+    t.boolean "term_accepted"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["animal_id"], name: "index_adoptions_on_animal_id"

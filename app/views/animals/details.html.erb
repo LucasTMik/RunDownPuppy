@@ -1,0 +1,19 @@
+
+
+<div class=" w3-col l8 w3-container w3-white w3-padding w3-round-xlarge my-wrap-large" >
+  <img  src="/dog.jpg" style="max-width:600px;max-height:450px;"></img>
+
+  <div class="w3-container my-beje w3-round" style="display:inline-block">
+    <h2><%= @animal.nick %></h2>
+    <p><%= @animal.color %></p>
+    <p><%= @animal.kind %></p>
+    <p><%= @animal.weight %></p>
+    <p><%= @animal.description %></p>
+  </div>
+
+  <% if @adopt %>
+    <h1>Adotar !</h1>
+  <% else %>
+    <h1>Logar !</h1>
+  <% end %>
+</div>

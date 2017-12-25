@@ -1,14 +1,63 @@
 <!DOCTYPE html>
-<html>
+<html style="background-color:#c5ddff;">
   <head>
     <title>RunDownPuppy</title>
     <%= csrf_meta_tags %>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
 
   <body>
-    <%= yield %>
+
+    <sidebar class="w3-sidebar w3-bar-block w3-hide-large w3-card w3-animate-right w3-display-right my-sidebar" onload="w3_start" id="mySidebar">
+      <div class=" w3-bar-item" style="margin-top:50px;"></div>
+
+      <button class="w3-bar-item w3-button w3-large w3-border-bottom w3-border-black" onclick="w3_close()">Fechar &times;</button>
+
+      <%= link_to "Histórico", root_path, class:'w3-bar-item w3-button w3-small w3-mobile' %>
+      <%= link_to "Cadastrar", animals_new_path, class:' w3-bar-item w3-button w3-mobile w3-purple w3-small' %>
+
+      <% if user_signed_in? %>
+      <button class="w3-bar-item w3-button w3-xlarge my-black"><%= link_to'Logado', root_path, class:'my-black' %> <spam class="w3-badge w3-white">O</spam></button>
+      <% else %>
+        <%= link_to "Login", new_user_session_path, class:'w3-bar-item w3-button w3-green w3-xlarge w3-mobile ' %>
+      <%end%>
+
+
+    </sidebar>
+
+    <div class="w3-main my-back-color">
+      <div class="w3-top">
+        <div class="w3-bar w3-animate-top my-bar " >
+
+            <%= link_to root_path, class:'w3-bar-item ' do %>
+              <h1 class="w3-wide w3-large">RunDownPuppy</h1>
+            <% end %>
+
+            <div class="w3-display-middle">
+              <form method="POST" action="#">
+              <input id="mySearch" type="search" class="w3-bar-item  w3-input w3-white w3-hide-medium w3-hide-small" placeholder="Buscar.."/>
+              <input type="submit" class="w3-bar-item w3-button w3-green w3-mobile w3-hide-medium w3-hide-small" value="Go"/>
+             </form>
+            </div>
+
+            <div  id="myMenu" class="w3-hide-small w3-hide-medium w3-display-right w3-bar-item my-letter">
+              <%= link_to 'Histórico', root_path , class:'w3-bar-item w3-button w3-xlarge my-letter' %>
+              <% if user_signed_in? %>
+                <button class="w3-bar-item w3-button w3-xlarge my-letter"><%= link_to'Logado', root_path, class:'my-letter' %> <spam class="w3-badge w3-white">O</spam></button>
+              <% else %>
+                <%= link_to 'Login', new_user_session_path , class:'w3-button w3-green w3-xlarge' %>
+              <% end %>
+            </div>
+
+            <button class="w3-button w3-xlarge w3-hide-large w3-bar-item w3-right"  id="myButton" onclick="w3_open()">&#9776;</button>
+            <button onclick="w3_search()" class="w3-padding w3-right w3-xxlarge w3-bar-item w3-hide-large w3-button"><i class="fa fa-search"></i></button>
+        </div>
+      </div>
+      <%= yield %>
+    </div>
+
   </body>
 </html>
