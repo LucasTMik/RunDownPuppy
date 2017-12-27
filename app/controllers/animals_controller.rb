@@ -2,6 +2,7 @@ class AnimalsController < ApplicationController
 
   def new
       @animal = Animal.new
+
   end
 
 
@@ -17,6 +18,8 @@ class AnimalsController < ApplicationController
   def details
     @animal = Animal.find(get_id_param)
     @adopt = authenticate
+
+    @comment = Comment.new
   end
 
   private
