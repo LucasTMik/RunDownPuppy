@@ -240,6 +240,7 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
   width: 60%;
   margin-left: 20%;
   margin-left: 20%;
+  margin-bottom:10%;
   padding: 20px;
 }
 .my-wrap-small{
@@ -305,5 +306,11 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
   display: inline-block;
 height: 80%;
 margin-bottom: 2%;
-
+}
+.my-scroll{
+  overflow-y: scroll;
+}
+.my-margin-6{
+  margin: 6px;
+  padding-top: 10px;
 }

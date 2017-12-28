@@ -1,4 +1,5 @@
 class AnimalsController < ApplicationController
+  Time::DATE_FORMATS[:post] = "-- %d/%b/%Y - %I:%M%p"
 
   def new
       @animal = Animal.new
@@ -20,6 +21,8 @@ class AnimalsController < ApplicationController
     @adopt = authenticate
 
     @comment = Comment.new
+    @comments = Comment.all
+    @user = User.all
   end
 
   private

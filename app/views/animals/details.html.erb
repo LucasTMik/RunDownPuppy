@@ -1,12 +1,12 @@
 
 
 <div class=" w3-row w3-container w3-white w3-padding w3-round-xlarge my-wrap-large" >
-  <img class="w3-col l8 m7" src="/dog.jpg" style="max-width:600px;max-height:450px;"></img>
+  <img class="w3-col l8 m7 " src="/dog.jpg" style="max-width:600px;max-height:450px;"></img>
 
-  <div class="w3-col l4 m5 w3-container my-beje w3-round" style="display:inline-block;margin-bottom:10px">
+  <div class="w3-col l4 m5 w3-container my-beje w3-round w3-card-4" style="display:inline-block;margin-bottom:10px">
     <label>Nick</label>
     <p><%= @animal.nick %></p>
-    <labelWeight</label>
+    <label>Weight</label>
     <p><%= @animal.weight %></p>
     <label>Kind</label>
     <p><%= @animal.kind %></p>
@@ -16,7 +16,7 @@
     <p><%= @animal.description %></p>
   </div>
 
-  <div class="w3-col l4 w3-center w3-container ">
+  <div class="w3-col l4 w3-center ">
     <% if @adopt %>
       <button class="w3-button w3-xlarge w3-green">Adotar !</button>
     <% else %>
@@ -24,11 +24,23 @@
     <% end %>
   </div>
 
+  <div class="w3-row" style="margin-bottom:5px;">
+    <p>Comentarios</p>
+    <% @comments.each do |c| %>
+      <% if c.animal_id == @animal.id %>
+        <div class="w3-col l12 w3-round-large w3-col l12 w3-container w3-blue my-margin-6">
+          <p><%= c.message %></p>
+          <p class="w3-right w3-small"><%= c.created_at.to_s(:post) %></p>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+
   <div class="w3-container">
     <%= simple_form_for @comment do |c| %>
-      <%= c.input :message %>
+      <%= c.input :message, label: false %>
       <%= c.hidden_field :animal_id, :value => @animal.id %>
-      <%= c.submit %>
+      <%= c.submit 'Enviar', class: 'w3-button w3-border' %>
     <% end %>
   </div>
 
